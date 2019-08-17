@@ -290,6 +290,10 @@ elseif ((${BUILD_COMPILER} EQUAL ${COMPILER_GCC}) OR
   
   if((${HOST_CPU} EQUAL ${CPU_X86}) OR (${HOST_CPU} EQUAL ${CPU_X64}))
     set(_C_FLAGS "${_C_FLAGS} -msse4")
+    
+    if(NOT CMAKE_HOST_APPLE)
+      set(_C_FLAGS "${_C_FLAGS} -fopenmp")
+    endif()
   endif() # X86 family
   
     
