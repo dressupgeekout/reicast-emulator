@@ -140,7 +140,7 @@ set(deps_SRCS
   ${crypt_SRCS}
   ${imgui_SRCS}
   ${d_deps}/xbrz/xbrz.cpp
-  ${d_deps}/dirent/dirent.c
+  #${d_deps}/dirent/dirent.c
   ${d_deps}/xxhash/xxhash.c
   ${d_deps}/chdpsr/cdipsr.cpp  # sigh,  this dir is named chdpsr for some reason ...
   ${d_deps}/coreio/coreio.cpp
@@ -210,7 +210,7 @@ elseif (${HOST_OS} EQUAL ${OS_LINUX} OR ${HOST_OS} EQUAL ${OS_ANDROID})
 	
   #add_definitions(-DGLES -DUSE_EVDEV)
   
-  link_libraries(pthread dl rt asound Xext GLESv2 EGL)
+  link_libraries(pthread rt asound Xext EGL)
 
 elseif(${HOST_OS} EQUAL ${OS_DARWIN})
 #
@@ -243,6 +243,9 @@ endif()
 
 include_directories ("${reicast_core_path}")
 
+if(${CMAKE_SYSTEM_NAME} STREQUAL "NetBSD")
+  add_definitions(-DTARGET_BSD)
+endif()
 
 
 
