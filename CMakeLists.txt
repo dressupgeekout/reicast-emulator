@@ -208,7 +208,7 @@ elseif (${HOST_OS} EQUAL ${OS_LINUX} OR ${HOST_OS} EQUAL ${OS_ANDROID})
       )
     endif() # ANDROID
 	
-  add_definitions(-DGLES -DUSE_EVDEV)
+  #add_definitions(-DGLES -DUSE_EVDEV)
   
   link_libraries(pthread dl rt asound Xext GLESv2 EGL)
 
