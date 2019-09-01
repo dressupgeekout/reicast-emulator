@@ -186,7 +186,7 @@ elseif (${HOST_OS} EQUAL ${OS_LINUX} OR ${HOST_OS} EQUAL ${OS_ANDROID})
     list(APPEND osd_SRCS 
       ${d_core}/linux/common.cpp
       ${d_core}/linux/context.cpp
-      ${d_core}/linux/oslib/posix/threading.cpp
+      ${d_core}/oslib/posix/threading.cpp
       ${d_core}/linux/nixprof/nixprof.cpp
 
       ${d_aout}/audiobackend_oss.cpp # add option
