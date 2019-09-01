@@ -250,8 +250,8 @@ set(reicast_SRCS ${core_SRCS} ${deps_SRCS} ${osd_SRCS})
 
 add_executable(${TNAME}${binSuffix} ${reicast_SRCS} ${deps_SRCS}) 
 
-
-
+# XXX Charlotte NetBSD hack
+target_include_directories(${TNAME}${binSuffix} SYSTEM PUBLIC "/usr/X11R7/include")
 
 
 if(APPLE)
