@@ -254,6 +254,7 @@ set(reicast_SRCS ${core_SRCS} ${deps_SRCS} ${osd_SRCS})
 
 add_executable(${TNAME}${binSuffix} ${reicast_SRCS} ${deps_SRCS}) 
 
+set_target_properties(${TNAME}${binSuffix} PROPERTIES CXX_STANDARD 11)
 
 
 
