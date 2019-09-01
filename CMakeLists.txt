@@ -188,6 +188,7 @@ elseif (${HOST_OS} EQUAL ${OS_LINUX} OR ${HOST_OS} EQUAL ${OS_ANDROID})
       ${d_core}/linux/context.cpp
       ${d_core}/oslib/posix/threading.cpp
       ${d_core}/linux/nixprof/nixprof.cpp
+      ${d_core}/linux/posix_vmem.cpp
 
       ${d_aout}/audiobackend_oss.cpp # add option
     ) # todo: configure linux audio lib options
@@ -210,7 +211,7 @@ elseif (${HOST_OS} EQUAL ${OS_LINUX} OR ${HOST_OS} EQUAL ${OS_ANDROID})
 	
   #add_definitions(-DGLES -DUSE_EVDEV)
   
-  link_libraries(pthread rt asound Xext EGL)
+  link_libraries(pthread rt asound Xext EGL GL)
 
 elseif(${HOST_OS} EQUAL ${OS_DARWIN})
 #
